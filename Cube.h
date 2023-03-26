@@ -6,18 +6,17 @@ class Cube {
 public:
 	Cube(Vector3 position, float cubieSize);
 	void Draw();
-	void RotateUp(bool clockwise);
-	void RotateDown(bool clockwise);
-	void RotateLeft(bool clockwise);
-	void RotateRight(bool clockwise);
-	void RotateFront(bool clockwise);
-	void RotateBack(bool clockwise);
-
+	void RotateLayer(int layer, char axis, bool clockwise);
+	void ShuffleCube(int numMoves);
+	bool isSolved();
+	void updateSolved();
 private:
 	Vector3 position;
 	int dimension = 3;
 	float cubieSize;
 	Cubie cubies[3][3][3];
+	int cubieIndex[3][3][3];
+	bool solved;
 
 	void PopulateCube();
 };

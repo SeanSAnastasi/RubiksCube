@@ -15,9 +15,9 @@ public:
 private:
 	void Draw();
 	void Update();
+	void checkKeyPressed();
 	Camera3D camera;
 	Cube cube;
 
-	float rotateUpTimer = 0.0f;
-	const float rotateUpCooldown = 1.0f;
+	bool pressed;
 };
